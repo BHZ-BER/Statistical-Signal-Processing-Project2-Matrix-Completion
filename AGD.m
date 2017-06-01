@@ -10,14 +10,14 @@ for fold = 1:10
     R = zeros(943, 1682);
     R(sub2ind(size(R),training_set(:,1),training_set(:,2)))=training_set(:,3);
     W = (R~=0);
-    [Uh, ss, V] = svds(R,3);
+    [Uh, ss, V] = svds(R,2);
     V = V*sqrt(ss);
     Uh = Uh*sqrt(ss);
     % Optimization
-    lambda = 11;
+    lambda = 1.9;
     maxit = 500;
     %step_size = 0.001;
-    thr = 0.5;
+    thr = 0.1;
     err = inf; err_inV = inf; err_hap = inf;
     err_hist = zeros(1,maxit);
     iter=0; tic

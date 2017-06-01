@@ -12,15 +12,15 @@ for fold = 1:10
     R = zeros(943, 1682);
     R(sub2ind(size(R),training_set(:,1),training_set(:,2)))=training_set(:,3);
     W = (R~=0);
-    k = 9;
+    k = 2;
     [Uh, ss, V] = svds(R,k);
     V = V*sqrt(ss);
     Uh = Uh*sqrt(ss);
     % Optimization
-    lambda = 15; 
+    lambda = 1.6; 
     maxit = 300;
     %step_size = 0.001;
-    thr = 5;
+    thr = 0.5;
     err = inf; err_inV = inf; err_hap = inf;
     err_hist = zeros(1,maxit);
     iter=0; tic

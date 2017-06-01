@@ -14,7 +14,9 @@ In order to run LDMM, VLFeat toolbox [http://www.vlfeat.org/]  for matlab is nec
 
 ## Usage
 
-Simply run AGD, ALS or LDMM to get the predicted matrix X. 
+Simply run AGD.m, ALS.m or LDMM.m to get the predicted matrix X. 
+
+I recommend to evaluate the perfomance on ALSOut(best).mat, which has the best performance on validation (test) set. 
 
 Note that we are running ten fold cross validation, so the total time should be ten times the single processing procedure duration. (For ALS and LDMM, it may take several minutes. For AGD it may take several seconds.)
 
