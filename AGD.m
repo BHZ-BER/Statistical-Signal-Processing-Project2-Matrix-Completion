@@ -44,7 +44,7 @@ for fold = 1:10
     if MSE_new < MSE
         MSE = MSE_new;
     %MSE = sum(sum(Test_W.*abs(Test_R - recovered))/sum(sum(Test_W)))
-        X=recovered;
+        X=recovered';
         save('AGDOut.mat','X');
     end
 end
